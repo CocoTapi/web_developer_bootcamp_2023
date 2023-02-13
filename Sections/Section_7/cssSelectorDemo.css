@@ -49,3 +49,7 @@ a:action{
 .post:nth-of-type(2n+1){
     background: #FFC7AD;
 }
+
+h2::first-letter {
+    font-size: 40px;
+}
