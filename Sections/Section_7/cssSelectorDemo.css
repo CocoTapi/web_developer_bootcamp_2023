@@ -53,3 +53,7 @@ a:action{
 h2::first-letter {
     font-size: 40px;
 }
+
+::selection {
+    background-color:#F4ACB7 ;
+}
