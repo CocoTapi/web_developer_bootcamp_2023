@@ -9,6 +9,7 @@
     width: 210px;
     background-color: #cce3de;
     text-align: center;
+    padding: 20px;
 }
 
 div > p {
@@ -26,6 +27,7 @@ div > p {
     width: 210px;
     background-color: #f5cac3;
     text-align: center;
+    padding: 20px;
 }
 
 .cardThree > img {
@@ -38,16 +40,19 @@ div > p {
     border: 5px dashed #f28482;
     width: 210px;
     background-color: #f6bd60;
-    text-align: center
+    text-align: center;
+    padding: 20px;
 }
 
 button {
     background-color: #f28482;
     font-size: 20px;
     color: white;
+    padding: 5px;
 }
 
 h1 {
     width: 210px;
     text-align: center;
+    padding: 0 20px;
 }
