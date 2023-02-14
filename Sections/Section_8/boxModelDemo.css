@@ -1,0 +1,53 @@
+.cardOne > img {
+    width: 200px;
+    border-radius: 50%;
+    /* border:5px solid #f28482  */
+}
+
+.cardOne {
+    border: 5px dashed #f28482;
+    width: 210px;
+    background-color: #cce3de;
+    text-align: center;
+}
+
+div > p {
+    text-align: left;
+}
+
+.cardTwo > img {
+    width: 200px;
+    border-radius: 50%;
+    /* border:5px solid #ced4da */
+}
+
+.cardTwo {
+    border: 5px dashed #f28482;
+    width: 210px;
+    background-color: #f5cac3;
+    text-align: center;
+}
+
+.cardThree > img {
+    width: 200px;
+    border-radius: 50%;
+    /* border:5px solid #6c757d */
+}
+
+.cardThree {
+    border: 5px dashed #f28482;
+    width: 210px;
+    background-color: #f6bd60;
+    text-align: center
+}
+
+button {
+    background-color: #f28482;
+    font-size: 20px;
+    color: white;
+}
+
+h1 {
+    width: 210px;
+    text-align: center;
+}
