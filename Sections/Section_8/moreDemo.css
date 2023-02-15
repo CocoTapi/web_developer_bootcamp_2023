@@ -1,4 +1,4 @@
-section {
+.card {
     width: 500px;
     height: 500px;
     background-color:#ece2d0;
@@ -14,4 +14,24 @@ h1 {
     background-color: #cebebe;
     line-height: 50%;
     font-size: 50px;
+}
+
+.ems {
+    line-height: 1em;
+    font-size: 0.8em;
+}
+
+.ems h2 {
+    background: #d5b9b2;
+    line-height: 50%;
+}
+
+.rems {
+    line-height: 1rem;
+    font-size: 2rems;
+}
+
+.rems h2 {
+    background-color: #d5b9b2;
+    line-height: 50%;
 }
