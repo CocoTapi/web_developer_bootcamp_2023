@@ -1,0 +1,14 @@
+nav {
+    font-family: 'Babylonica', cursive;
+    text-transform: capitalize;
+    font-size: 1.5em;
+    font-weight: 400;
+    margin:calc(10%/6);
+    padding: calc(10%/6) 0;
+    border-bottom: 1px solid grey;
+}
+
+img {
+    width: 30%;
+    margin: calc(10%/6);
+}
