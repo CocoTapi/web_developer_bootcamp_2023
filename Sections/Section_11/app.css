@@ -47,6 +47,7 @@ table {
 	border-spacing: 0;
 }
 html {
+    box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -121,4 +122,19 @@ body {
     padding: 15px 35px;
     text-decoration: none; /*removed underbar */
     margin: 25px 0;
+    transition: background-color 200ms ease-in-out;
 }
+
+.pricing-button:hover, .pricing-button:focus {
+    background: #e1f1ff;
+}
+
+.pricing-button.is-featured {
+    background-color: #48aaff;
+    color: white;
+   }
+
+.pricing-button.is-featured:hover, .pricing-button.is-featured:focus {
+    background: #269aff;
+    color: white;
+}  
