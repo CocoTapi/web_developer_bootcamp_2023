@@ -112,3 +112,13 @@ body {
     font-weight: 700;
     font-size: 32px;
 }
+
+.pricing-button {
+    border: 1px solid #0dd1ff;
+    border-radius: 10px;
+    color: #348efe;
+    display:inline-block;
+    padding: 15px 35px;
+    text-decoration: none; /*removed underbar */
+    margin: 25px 0;
+}
