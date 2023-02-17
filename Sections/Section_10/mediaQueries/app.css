@@ -9,20 +9,18 @@ h1 {
 nav {
     font-size: 1.5em;
     display: flex;
-    /* flex-direction: row; */
     justify-content: space-between;
 }
 
 ul {
     border: 1px solid orange;
-    flex: 1;
+    flex: 1;  
     max-width: 50%;
     display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
 }
 
-ul,li {
+ul li {
     display: inline;
     margin: 0;
     padding: 0;
@@ -44,8 +42,8 @@ ul,li {
         display: flex; */
         /* flex-direction: column;
         justify-content: space-evenly;
-        align-items: center; */ */
-    }
+        align-items: center; */ 
+    /* } */
 }
 
 
