@@ -14,4 +14,5 @@ if (age >= 0 && age < 5 || age >= 65) {
 } else {
     console.log("INVALID AGE");
 }
-   
+
+
