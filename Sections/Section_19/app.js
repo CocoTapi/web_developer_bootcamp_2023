@@ -28,3 +28,19 @@
 //     }
 // }
 
+
+
+// list of names with a row#
+const seatingChart = [
+	['Ken', 'Erik', 'Namita' ],
+	['Geo', 'John', 'Antonio', 'Kevin'],
+	['Yuma', 'Sakura', 'Jack', 'Erika']
+	]
+
+for (i = 0; i < seatingChart.length; i++){
+    console.log(`ROW #${i + 1}`);
+    const row = seatingChart[i];
+    for (let j = 0; j < row.length; j++){
+        console.log(row[j]);
+    }
+}
