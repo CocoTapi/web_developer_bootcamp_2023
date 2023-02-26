@@ -3,7 +3,7 @@
 //19 - 64 $20
 //65+ free
 
-const age = -79;
+const age = 2;
 
 if (age >= 0 && age < 5 || age >= 65) {
     console.log("FREE");
@@ -15,4 +15,7 @@ if (age >= 0 && age < 5 || age >= 65) {
     console.log("INVALID AGE");
 }
 
-
+// // using NOT '!'
+// if (!(age >= 0 && age < 5 || age >= 65)) {
+//     console.log("You are not a baby or senior");
+// } 
