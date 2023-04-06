@@ -40,6 +40,15 @@ app.get('/dog', (req, res) => {
     res.send("woof!!!");
 })
 
+//localhost:3000/search?q=
+app.get('/search', (req, res) => {
+    const {q} = req.query;
+    if(!q) {
+        res.send("NOTHING FOUND IF NOTHING SEARCH");
+    }
+    res.send(`<h1>Search results for: ${q} </h1>`);
+})
+
 //This "*" need to be the last. Everthing after this are ignored.
 app.get('*', (req, res) => {
     res.send("I don't know the path!!!!")
