@@ -11,7 +11,7 @@ app.listen( 3000, () => {
 // })
 
 app.get('/', (req, res) => {
-    res.send("This is my home page!!!");
+    res.send("Welcome to my home page!!!");
 })
 
 //This makes a path 
