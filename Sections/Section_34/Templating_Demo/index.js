@@ -10,6 +10,11 @@ app.get('/', (req, res) => {
     res.render('home.ejs');
 })
 
+app.get('/random', (req, res) => {
+    const num = (Math.random() * 10) + 1;
+    res.render('random')
+})
+
 app.listen(3000, () => {
     console.log("LISTENING ON PORT 3000");
 })
