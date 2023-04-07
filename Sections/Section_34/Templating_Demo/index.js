@@ -11,8 +11,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/random', (req, res) => {
-    const num = (Math.random() * 10) + 1;
-    res.render('random')
+    const num = Math.floor((Math.random() * 10)) + 1;
+    res.render('random', {random: num});
 })
 
 app.listen(3000, () => {
