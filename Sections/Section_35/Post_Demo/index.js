@@ -1,5 +1,9 @@
 const express = require('express');
 const app = express();
+const path = require('path');
+
+app.use('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
@@ -15,4 +19,31 @@ app.post('/tacos', (req, res) => {
 
 app.listen(3000, () => {
     console.log("ON PORT 3000");
+})
+
+const comments = [
+    {
+        username: 'Todd',
+        comment: "lol that is so funny!"
+    },
+    {
+        username: 'Skyler',
+        comment: "I like to go birdwatching with my dog"
+    },
+    {
+        username: 'Dodger',
+        comment: "I like sun bathing on my couch"
+    },
+    {
+        username: 'Salty',
+        comment: "That looks so delicious!"
+    },
+    {
+        username: 'Pikmin',
+        comment: "I am not a carrot"
+    }
+]
+
+app.get('/comments', (req, res) => {
+    res.render('comments/index', {comments});
 })
