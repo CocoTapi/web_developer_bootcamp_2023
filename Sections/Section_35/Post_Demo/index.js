@@ -36,31 +36,40 @@ const comments = [
         comment: "I am not a carrot"
     }
 ]
-
+//this is for a home page
 app.get('/comments', (req, res) => {
     res.render('comments/index', {comments});
 })
+//this is for a new comment page
 app.get('/comments/new', (req, res) => {
     res.render('comments/new');
 })
-
+//This is for a form to create a new comment
 app.post('/comments', (req, res) => {
     const {username, comment} = req.body;
     comments.push({username, comment, id: uuid()});
     res.redirect('/comments');
 })
 
+//This is for a detail page
 app.get('/comments/:id', (req, res) => {
     const { id } = req.params;
     const comment = comments.find(c => c.id === id);
     res.render('comments/show', {comment})
 })
+//this is for a form to edit partially
 app.patch('/comments/:id', (req, res) => {
     const { id } = req.params;
     const newCommentText = req.body.comment;
     const foundComment = comments.find(c => c.id === id);
     foundComment.comment = newCommentText;
     res.redirect('/comments');
+})
+//this is for an editing page
+app.get('/comments/:id/edit', (req, res) => {
+    const { id } = req.params;
+    const comment = comments.find(c => c.id === id);
+    res.render('/comments/edit', {comment});
 })
 
 app.get('/tacos', (req, res) => {
