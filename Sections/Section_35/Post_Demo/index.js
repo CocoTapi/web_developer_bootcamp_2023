@@ -10,22 +10,27 @@ app.use(express.json());
 
 const comments = [
     {
+        id: 1,
         username: 'Todd',
         comment: "lol that is so funny!"
     },
     {
+        id: 2,
         username: 'Skyler',
         comment: "I like to go birdwatching with my dog"
     },
     {
+        id: 3,
         username: 'Dodger',
         comment: "I like sun bathing on my couch"
     },
     {
+        id: 4,
         username: 'Salty',
         comment: "That looks so delicious!"
     },
     {
+        id: 5,
         username: 'Pikmin',
         comment: "I am not a carrot"
     }
@@ -42,6 +47,12 @@ app.post('/comments', (req, res) => {
     const {username, comment} = req.body;
     comments.push({username, comment})
     res.redirect('/comments');
+})
+
+app.get('/comments/:id', (req, res) => {
+    const { id } = req.params;
+    const comment = comments.find(c => c.id === parseInt(id));
+    res.render('comments/show', {comment})
 })
 
 app.get('/tacos', (req, res) => {
