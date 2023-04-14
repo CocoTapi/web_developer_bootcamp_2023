@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 app.use(methodOverride('_method'));
 
-const comments = [
+let comments = [
     {
         id: uuid(),
         username: 'Todd',
@@ -72,6 +72,13 @@ app.get('/comments/:id/edit', (req, res) => {
     const { id } = req.params;
     const comment = comments.find(c => c.id === id);
     res.render('comments/edit', {comment});
+})
+
+//this is for a delete function
+app.delete('/comments/:id', (req, res) => {
+    const { id } = req.params;
+    comments = comments.filter(c => c.id !== id);
+    res.redirect('/comments');
 })
 
 app.get('/tacos', (req, res) => {
