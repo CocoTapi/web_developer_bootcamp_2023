@@ -59,7 +59,7 @@ app.get('/comments/:id', (req, res) => {
 })
 //this is for a form to edit partially
 app.patch('/comments/:id', (req, res) => {
-    const { id } = req.params;
+    const { id } = req.params; //a string is coming here
     const newCommentText = req.body.comment;
     const foundComment = comments.find(c => c.id === id);
     foundComment.comment = newCommentText;
@@ -69,7 +69,7 @@ app.patch('/comments/:id', (req, res) => {
 app.get('/comments/:id/edit', (req, res) => {
     const { id } = req.params;
     const comment = comments.find(c => c.id === id);
-    res.render('/comments/edit', {comment});
+    res.render('comments/edit', {comment});
 })
 
 app.get('/tacos', (req, res) => {
