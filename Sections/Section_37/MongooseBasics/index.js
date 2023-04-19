@@ -17,3 +17,8 @@ const movieSchema = new mongoose.Schema({
     rating: String
 })
 
+//make a model using that schema
+mongoose.model('Movie', movieSchema);
+
+//save this result to a variable
+const Movie = mongoose.model('Movie', movieSchema);
