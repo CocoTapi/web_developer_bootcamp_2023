@@ -24,7 +24,7 @@ mongoose.model('Movie', movieSchema);
 const Movie = mongoose.model('Movie', movieSchema);
 
 new Movie({
-    title:"Harry Potterand the Sorcerer's stone",
+    title:"Harry Potter and the Sorcerer's stone",
     year: 2001,
     score: 7.6,
     rating: 'R',
