@@ -23,9 +23,9 @@ mongoose.model('Movie', movieSchema);
 //save this result to a variable
 const Movie = mongoose.model('Movie', movieSchema);
 
-new Movie({
-    title:"Harry Potter and the Sorcerer's stone",
+const HarryPotter1 = new Movie({
+    title:"HarryPotter1",
     year: 2001,
     score: 7.6,
     rating: 'R',
-})
+});
