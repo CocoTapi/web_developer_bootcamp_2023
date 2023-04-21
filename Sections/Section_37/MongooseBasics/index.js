@@ -29,3 +29,10 @@ const HarryPotter1 = new Movie({
     score: 7.6,
     rating: 'R',
 });
+
+const Kiki = new Movie({
+    title:"Kiki's Delivery Service",
+    year: 1998,
+    score: 7.8,
+    rating: 'R', 
+})
