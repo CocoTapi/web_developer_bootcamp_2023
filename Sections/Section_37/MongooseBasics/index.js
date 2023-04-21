@@ -36,3 +36,13 @@ const Kiki = new Movie({
     score: 7.8,
     rating: 'R', 
 })
+
+Movie.insertMany([
+    {title: "Spirited Away", year: 2001, score: 8.6, rating: 'R'},
+    {title: "Nausicaa of the Valley of the Wind", year: 1984, score: 8.0, rating: 'R'},
+    {title: "My Neighbor Totoro", year: 1988, score: 8.1, rating: 'R'},
+])
+.then( data => {
+    console.log("IT WORKED");
+    console.log(data);
+})
