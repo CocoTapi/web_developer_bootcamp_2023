@@ -22,12 +22,13 @@ mongoose.connect('mongodb://127.0.0.1:27017/productApp')
         onSale: {
             type: Boolean,
             default: false,
-        }
+        },
+        categories: [String]
     })
 
     const Product = mongoose.model('Product', productSchema);
 
-    const bike = new Product ({ name: 'Bike Helmet', price: 29.50});
+    const bike = new Product ({ name: 'Bike Helmet ver. 4', price: 32.99, categories: ['Cycling', 'Safety']});
     bike.save()
         .then(data => {
             console.log("IT WORKED");
