@@ -23,7 +23,17 @@ mongoose.connect('mongodb://127.0.0.1:27017/productApp')
             type: Boolean,
             default: false,
         },
-        categories: [String]
+        categories: [String],
+        qty: {
+            online: {
+                type: Number,
+                default: 0
+            },
+            inStore: {
+                type: Number,
+                default: 0
+            }
+        }
     })
 
     const Product = mongoose.model('Product', productSchema);
