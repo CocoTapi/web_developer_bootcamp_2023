@@ -27,7 +27,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/productApp')
     bike.save()
         .then(data => {
             console.log("IT WORKED");
-            console.log("data");
+            console.log(data);
         })
         .catch(err => {
             console.log("OH NO ERROR!");
