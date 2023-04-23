@@ -38,6 +38,11 @@ mongoose.connect('mongodb://127.0.0.1:27017/productApp')
                 type: Number,
                 default: 0
             }
+        },
+        size: {
+            type: String,
+            enum: ['S', 'M', 'L']
+            //now you can only register only'S', 'M', 'L' sizes. 
         }
     })
 
