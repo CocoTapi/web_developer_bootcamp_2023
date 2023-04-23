@@ -19,6 +19,10 @@ mongoose.connect('mongodb://127.0.0.1:27017/productApp')
             type: Number,
             required: true
         },
+        color: {
+            type: String,
+            required: true
+        },
         onSale: {
             type: Boolean,
             default: false,
@@ -38,7 +42,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/productApp')
 
     const Product = mongoose.model('Product', productSchema);
 
-    const bike = new Product ({ name: 'Bike Helmet ver. 4', price: 32.99, categories: ['Cycling', 'Safety']});
+    const bike = new Product ({ name: 'Mountain Bike 007', price: 679.99, color: 'yellow', categories: ['Cycling', 'Safety']});
     bike.save()
         .then(data => {
             console.log("IT WORKED");
