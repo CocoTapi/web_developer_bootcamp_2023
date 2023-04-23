@@ -17,7 +17,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/productApp')
         },
         price: {
             type: Number,
-            required: true
+            required: true,
+            min: [0, 'Price must be positive number!']
         },
         color: {
             type: String,
