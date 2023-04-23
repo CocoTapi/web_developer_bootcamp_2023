@@ -42,15 +42,23 @@ mongoose.connect('mongodb://127.0.0.1:27017/productApp')
 
     const Product = mongoose.model('Product', productSchema);
 
-    const bike = new Product ({ name: 'Mountain Bike 007', price: 679.99, color: 'yellow', categories: ['Cycling', 'Safety']});
-    bike.save()
-        .then(data => {
-            console.log("IT WORKED");
-            console.log(data);
-        })
-        .catch(err => {
-            console.log("OH NO ERROR!");
-            console.log(err);
-        })
+    // const bike = new Product ({ name: 'Bike Pump', price: 10.99, color: 'white', categories: ['Cycling']});
+    // bike.save()
+    //     .then(data => {
+    //         console.log("IT WORKED");
+    //         console.log(data);
+    //     })
+    //     .catch(err => {
+    //         console.log("OH NO ERROR!");
+    //         console.log(err);
+    //     })
 
-    
+Product.findOneAndUpdate({name: 'Bike Pump'}, {price: 9.99}, {new: true, runValidators: true})
+    .then(data => {
+    console.log("IT WORKED");
+    console.log(data);
+    })
+    .catch(err => {
+    console.log("OH NO ERROR!");
+    console.log(err);
+    })
