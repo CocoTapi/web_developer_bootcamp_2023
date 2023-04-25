@@ -22,7 +22,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/productApp')
         },
         color: {
             type: String,
-            required: true
+            // required: true
         },
         onSale: {
             type: Boolean,
@@ -51,12 +51,13 @@ mongoose.connect('mongodb://127.0.0.1:27017/productApp')
     //     console.log(`-from ${this.name}`);
     // }
 
-    productSchema.methods.toggleOnSale = function(){
-        this.onSale = !this.onSale;
-        return this.save();
-    }
+    // productSchema.methods.toggleOnSale = function(){
+    //     this.onSale = !this.onSale;
+    //     return this.save();
+    // }
 
     productSchema.methods.addCategory = function (newCategory){
+        console.log('Adding category:', newCategory);
         this.categories.push(newCategory);
         return this.save();
     }
@@ -66,11 +67,16 @@ mongoose.connect('mongodb://127.0.0.1:27017/productApp')
 
     //this is for .addCategory method
     const findProduct = async() => {
-        const foundProduct = await Product.findOne({name: "Mountain Bile"});
+        try {
+            const foundProduct = await Product.findOne({name: "Mountain Bike"});
         console.log(foundProduct);
-        await foundProduct.toggleOnSale();
-        console.log(foundProduct);
+        // await foundProduct.toggleOnSale();
+        // console.log(foundProduct);
         await foundProduct.addCategory('Outdoors')
+        console.log(findProduct);
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     findProduct();
