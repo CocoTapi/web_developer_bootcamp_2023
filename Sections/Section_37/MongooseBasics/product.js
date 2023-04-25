@@ -46,25 +46,50 @@ mongoose.connect('mongodb://127.0.0.1:27017/productApp')
         }
     })
 
-    productSchema.methods.greet = function() {
-        console.log("HELLO! HI!! HOWDY!!!");
-        console.log(`-from ${this.name}`);
+    // productSchema.methods.greet = function() {
+    //     console.log("HELLO! HI!! HOWDY!!!");
+    //     console.log(`-from ${this.name}`);
+    // }
+
+    productSchema.methods.toggleOnSale = function(){
+        this.onSale = !this.onSale;
+        return this.save();
     }
 
+    productSchema.methods.addCategory = function (newCategory){
+        this.categories.push(newCategory);
+        return this.save();
+    }
+
+
     const Product = mongoose.model('Product', productSchema);
-    
+
+    //this is for .addCategory method
     const findProduct = async() => {
-        try {
-            const foundProduct = await Product.findOne({name:'Mountain Bike'});
-            foundProduct.greet();
-        } catch (err) {
-            console.log(err)
-        }
-        
+        const foundProduct = await Product.findOne({name: "Mountain Bile"});
+        console.log(foundProduct);
+        await foundProduct.toggleOnSale();
+        console.log(foundProduct);
+        await foundProduct.addCategory('Outdoors')
     }
 
     findProduct();
 
+    // this is for .greet() method
+    // const findProduct = async() => {
+    //     try {
+    //         const foundProduct = await Product.findOne({name:'Mountain Bike'});
+    //         foundProduct.greet();
+    //     } catch (err) {
+    //         console.log(err)
+    //     }
+        
+    // }
+
+    // findProduct();
+
+
+    //This is to register a new product 
     // const bike = new Product ({ name: 'Bike Pump', price: 10.99, color: 'white', categories: ['Cycling']});
     // bike.save()
     //     .then(data => {
