@@ -72,8 +72,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/productApp')
         console.log(foundProduct);
         // await foundProduct.toggleOnSale();
         // console.log(foundProduct);
-        await foundProduct.addCategory('Outdoors')
-        console.log(findProduct);
+        await foundProduct.addCategory('Sports')
+        console.log(foundProduct);
         } catch (error) {
             console.log(error);
         }
