@@ -48,7 +48,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/productApp')
 
     productSchema.methods.greet = function() {
         console.log("HELLO! HI!! HOWDY!!!");
-        console.log('-from ${this.name}')
+        console.log(`-from ${this.name}`);
     }
 
     const Product = mongoose.model('Product', productSchema);
