@@ -62,6 +62,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/productApp')
         return this.save();
     }
 
+    productSchema.statics.fireSale = function() {
+        return this.updateMany({}, {onSale: true, price: 0});
+    }
 
     const Product = mongoose.model('Product', productSchema);
 
@@ -79,7 +82,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/productApp')
         }
     }
 
-    findProduct();
+    Product.fireSale().then(res => console.log(res));
+
+    // findProduct();
 
     // this is for .greet() method
     // const findProduct = async() => {
