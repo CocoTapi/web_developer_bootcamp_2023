@@ -66,6 +66,10 @@ mongoose.connect('mongodb://127.0.0.1:27017/productApp')
         return this.updateMany({}, {onSale: true, price: 0});
     }
 
+    productSchema.statics.outOfStock = function() {
+        return this.updateMany({}, {onSale: false});
+    }
+
     const Product = mongoose.model('Product', productSchema);
 
     //this is for .addCategory method
