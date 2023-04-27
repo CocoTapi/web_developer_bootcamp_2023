@@ -9,4 +9,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/productApp')
         console.log("OH NO ERROR!!!");
         console.log(err);
     })
-    
+
+    const personSchema = new mongoose.Schema({
+        first: String,
+        last: String
+    })
