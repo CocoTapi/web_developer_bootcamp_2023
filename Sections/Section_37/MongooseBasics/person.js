@@ -14,3 +14,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/productApp')
         first: String,
         last: String
     })
+
+    personSchema.virtual('fullName').get(function () {
+        return `${this.first} ${this.last}`;
+    })
+
+    const Person = mongoose.model('person', personSchema);
