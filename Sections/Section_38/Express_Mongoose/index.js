@@ -20,6 +20,10 @@ app.get('/cat', (req, res) => {
     console.log("MEOW")
 })
 
+app.get('/test'), (req, res) => {
+    console.log("This is test")
+}
+
 app.listen(3000, () => {
     console.log('APP IS LISTENING ON PORT 3000')
 })
