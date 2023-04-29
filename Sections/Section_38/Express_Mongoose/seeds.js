@@ -3,8 +3,6 @@ const Product = require('./models/product');
 
 const mongoose = require('mongoose');
 
-const Product = require('./models/product')
-
 mongoose.set('strictQuery', true);
 mongoose.connect('mongodb://127.0.0.1:27017/farmStand')
     .then(() => {
@@ -28,4 +26,3 @@ p.save()
     .catch(e => {
         console.log(e)
     })
-    
