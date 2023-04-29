@@ -1,3 +1,4 @@
+const Product = require('./models/product');
 const mongoose = require('mongoose');
 
 const Product = require('./models/product')
@@ -11,3 +12,4 @@ mongoose.connect('mongodb://127.0.0.1:27017/farmStand')
         console.log("OH NO Mongo ERROR!!!");
         console.log(err);
     })
+
