@@ -22,8 +22,11 @@ app.get('/cat', (req, res) => {
     console.log("MEOW")
 })
 
-app.get('/test'), (req, res) => {
-    console.log("This is test")
+app.get('/products'), async (req, res) => {
+    const products = await Product.find({});
+    console.log(products);
+    res.send("ALL PRODUCTS")
+    // res.render('products/index', {products})
 }
 
 app.listen(3000, () => {
