@@ -15,7 +15,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/farmStand')
         console.log(err);
     })
 
-app.set('views', path.join(__dirname, 'view'));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.get('/cat', (req, res) => {
@@ -24,9 +24,7 @@ app.get('/cat', (req, res) => {
 
 app.get('/products', async (req, res) => {
     const products = await Product.find({});
-    console.log(products);
-    res.send("ALL PRODUCTS")
-    // res.render('products/index', {products})
+    res.render('products/index.ejs', {products})
 })
 
 app.listen(3000, () => {
