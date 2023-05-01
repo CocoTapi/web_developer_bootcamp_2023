@@ -22,12 +22,12 @@ app.get('/cat', (req, res) => {
     console.log("MEOW")
 })
 
-app.get('/products'), async (req, res) => {
+app.get('/products', async (req, res) => {
     const products = await Product.find({});
     console.log(products);
     res.send("ALL PRODUCTS")
     // res.render('products/index', {products})
-}
+})
 
 app.listen(3000, () => {
     console.log('APP IS LISTENING ON PORT 3000')
