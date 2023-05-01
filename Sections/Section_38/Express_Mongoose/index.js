@@ -39,9 +39,10 @@ app.get('/products/:id', async (req, res) => {
     res.render('products/show', {product});
 })
 
-app.post('/products', (req, res) => {
-    console.log(req.body);
-    res.send("making your product");
+app.post('/products', async (req, res) => {
+    const newProduct = new Product(req.body);
+    await newProduct.save();
+    res.render(`products/${newProduct._id}`);
 })
 
 app.listen(3000, () => {
