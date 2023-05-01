@@ -42,7 +42,7 @@ app.get('/products/:id', async (req, res) => {
 app.post('/products', async (req, res) => {
     const newProduct = new Product(req.body);
     await newProduct.save();
-    res.render(`products/${newProduct._id}`);
+    res.render('products/show', {product: newProduct});
 })
 
 app.listen(3000, () => {
