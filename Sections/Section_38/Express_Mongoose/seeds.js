@@ -13,16 +13,60 @@ mongoose.connect('mongodb://127.0.0.1:27017/farmStand')
         console.log(err);
     })
 
-const p = new Product({
-    name: 'Ruby Grapefruit',
-    price: 1.65,
-    category: 'fruit'
-})
+// const p = new Product({
+//     name: 'Ruby Grapefruit',
+//     price: 1.65,
+//     category: 'fruit'
+// })
 
-p.save()
-    .then(p => {
-        console.log(p)
+// p.save()
+//     .then(p => {
+//         console.log(p)
+//     })
+//     .catch(e => {
+//         console.log(e)
+//     })
+
+const seedProducts = [{
+    name: 'Cherry Tomatoes',
+    price: 1.99,
+    category: 'vegetable'
+},
+{
+    name: 'Cucumber',
+    price: 1.25,
+    category: 'vegetable'
+},
+{
+    name: 'Shisho',
+    price: 1.99,
+    category: 'vegetable'
+},
+{
+    name: 'Peas',
+    price: 2.99,
+    category: 'vegetable'
+},
+{
+    name: 'Grapes',
+    price: 2.99,
+    category: 'fruit'
+},
+{
+    name: 'Corn',
+    price: 1.25,
+    category: 'vegetable'
+},
+{
+    name: 'Eggs',
+    price: 1.25,
+    category: 'dairy'
+}]
+
+Product.insertMany(seedProducts)
+    .then(res => {
+        console.log(res);
     })
     .catch(e => {
-        console.log(e)
+        console.log(e);
     })
