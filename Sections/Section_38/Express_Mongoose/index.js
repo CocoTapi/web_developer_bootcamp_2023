@@ -28,6 +28,7 @@ app.get('/products', async (req, res) => {
     res.render('products/index.ejs', {products})
 })
 
+//this needs before the get request from id. Otherwise it assumes "/new" is id and doesn't work.  
 app.get('/products/new', (req, res) => {
     res.render('products/new');
 })
