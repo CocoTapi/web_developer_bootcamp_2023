@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 
 const Product = require('./models/product')
 
@@ -17,7 +18,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/farmStand')
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
 app.use(express.urlencoded({extended: true}));
+app.use(methodOverride('_method'));
 
 app.get('/cat', (req, res) => {
     console.log("MEOW")
