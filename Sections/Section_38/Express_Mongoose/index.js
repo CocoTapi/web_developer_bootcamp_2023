@@ -46,6 +46,11 @@ app.get('/products/:id/edit', async (req, res) => {
     res.render('products/edit', {product});
 })
 
+app.put('/products/:id', async(req, res) => {
+    console.log(req.body);
+    res.send('PUT!!!')
+})
+
 app.post('/products', async (req, res) => {
     const newProduct = new Product(req.body);
     await newProduct.save();
