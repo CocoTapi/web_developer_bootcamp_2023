@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Zack & Shiori's Farm</h1>
-    <h2><%= category %> Products!</h2>
+    <h2><%= category.toUpperCase() %> Products!</h2>
     <ul>
         <% for (let product of products) { %>
             <li><a href="/products/<%=product._id %>"><%= product.name %></a></li>
