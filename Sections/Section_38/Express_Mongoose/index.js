@@ -35,7 +35,7 @@ app.get('/products', async (req, res) => {
 
 //this needs before the get request from id. Otherwise it assumes "/new" is id and doesn't work.  
 app.get('/products/new', (req, res) => {
-    res.render('products/new');
+    res.render('products/new', {categories});
 })
 
 app.get('/products/:id', async (req, res) => {
