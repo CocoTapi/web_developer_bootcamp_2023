@@ -26,6 +26,8 @@ app.get('/cat', (req, res) => {
     console.log("MEOW")
 })
 
+const categories = ['fruit', 'vegetable', 'dairy'];
+
 app.get('/products', async (req, res) => {
     const products = await Product.find({});
     res.render('products/index.ejs', {products})
