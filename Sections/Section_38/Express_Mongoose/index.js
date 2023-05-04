@@ -29,8 +29,14 @@ app.get('/cat', (req, res) => {
 const categories = ['fruit', 'vegetable', 'dairy'];
 
 app.get('/products', async (req, res) => {
-    const products = await Product.find({});
-    res.render('products/index.ejs', {products})
+    const { category } = req.query;
+    if (category) {
+        const products = await Product.find({category});
+        res.render('products/index', {products, category})
+    } else {
+        const products = await Product.find({});
+        res.render('products/index.ejs', {products, category: 'All'});
+    }
 })
 
 //this needs before the get request from id. Otherwise it assumes "/new" is id and doesn't work.  
