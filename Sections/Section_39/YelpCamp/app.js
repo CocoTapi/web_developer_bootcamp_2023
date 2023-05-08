@@ -1,5 +1,4 @@
 const express = require('express');
-const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 
@@ -12,7 +11,7 @@ db.once('open', () => {
     console.log("Database connected");
 });
 
-
+const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
