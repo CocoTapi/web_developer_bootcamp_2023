@@ -12,7 +12,13 @@ db.once('open', () => {
     console.log("Database connected");
 });
 
+const Campground = require("../models/campground");
 
+const seedDB = async() => {
+    await campground.deleteMany({});
+    const c = new Campground({title: 'purple field'});
+    await c.save();
+}
 
 
 
