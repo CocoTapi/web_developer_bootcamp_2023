@@ -1,7 +1,5 @@
-const express = require('express');
-const path = require('path');
 const mongoose = require('mongoose');
-
+const Campground = require("../models/campground");
 
 mongoose.set('strictQuery', true);
 mongoose.connect('mongodb://localhost:27017/yelp-camp')
@@ -12,13 +10,15 @@ db.once('open', () => {
     console.log("Database connected");
 });
 
-const Campground = require("../models/campground");
+
 
 const seedDB = async() => {
-    await campground.deleteMany({});
+    await Campground.deleteMany({});
     const c = new Campground({title: 'purple field'});
     await c.save();
 }
+
+seedDB();
 
 
 
