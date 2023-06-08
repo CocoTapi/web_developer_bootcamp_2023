@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const Campground = require('./models/campground');
+const campground = require('./models/campground');
 
 mongoose.set('strictQuery', true);
 mongoose.connect('mongodb://localhost:27017/yelp-camp')
@@ -21,10 +22,9 @@ app.get('/', (req, res) => {
     res.render('home');
 })
 
-app.get('/makecampground', async (req, res) => {
-    const camp = new Campground({title: 'My backyard', description: 'Cheap camping!'});
-    await camp.save();
-    res.send(camp);
+app.get('/campgrounds', async (req, res) => {
+    const campgrounds = await Campground.find( {} );
+    res.render('campgrounds/index', {campgrounds});
 })
 
 app.listen(3000, () => {
