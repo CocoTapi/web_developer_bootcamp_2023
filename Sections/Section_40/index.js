@@ -9,8 +9,8 @@ app.use(morgan('tiny'));
 //     next();
 // })
 
-//set a password to open any
-app.use((req, res, next) => {
+//set a password to open any page
+app.use( (req, res, next) => {
     const { password } = req.query;
     if(password === 'dodgerthecat') {
         next();
