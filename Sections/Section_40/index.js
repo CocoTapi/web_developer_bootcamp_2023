@@ -1,6 +1,6 @@
-const express = required("express");
+const express = require("express");
 const app = express();
-const morgan = required("morgan");
+const morgan = require("morgan");
 
 //middleware runs only when you have a particular path: /cats
 app.use('/cats', (req, res, next) => {
