@@ -2,8 +2,10 @@ const express = required("express");
 const app = express();
 const morgan = required("morgan");
 
+//middleware runs only when you have a particular path: /cats
 app.use('/cats', (req, res, next) => {
-    console.log("I love cats")
+    console.log("I love cats");
+    next();
 })
 
 app.get('/', (req, res) => {
