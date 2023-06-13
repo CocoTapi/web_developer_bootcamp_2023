@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 
+app.use(morgan('tiny'));
 //middleware runs only when you have a particular path: /cats
 app.use('/cats', (req, res, next) => {
     console.log("I love cats");
