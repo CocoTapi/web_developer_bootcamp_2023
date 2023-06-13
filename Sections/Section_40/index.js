@@ -10,13 +10,13 @@ app.use(morgan('tiny'));
 // })
 
 //set a password to open any page
-app.use( (req, res, next) => {
-    const { password } = req.query;
-    if(password === 'dodgerthecat') {
-        next();
-    }
-    res.send("SORRY YOU NEED A PASSWORD");
-}) 
+// app.use( (req, res, next) => {
+//     const { password } = req.query;
+//     if(password === 'dodgerthecat') {
+//         next();
+//     }
+//     res.send("SORRY YOU NEED A PASSWORD");
+// }) 
 
 app.get('/', (req, res) => {
     res.send("Welcome to My Home Page");
@@ -24,6 +24,10 @@ app.get('/', (req, res) => {
 
 app.get('/cats', (req, res) => {
     res.send("Meow meow ^'w'^")
+})
+
+app.use((req, res) => {
+    res.status(404).send("NOT FOUND!");
 })
 
 app.listen(3000, () => {
